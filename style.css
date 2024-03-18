@@ -1,0 +1,19 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 960px;
+    width: 960px;
+    gap: 3px;
+}
+
+.grid-item {
+  flex: 1 0 20%;
+  background-color: blue;
+}
+
+button {
+  margin: 10px auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}

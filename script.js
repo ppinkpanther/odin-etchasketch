@@ -5,13 +5,13 @@ const button = document.querySelector('button');
 grid.addEventListener('mouseover', (e) => {
     console.log(e.target);
     if(e.target.className != "grid"){
-        e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = '#2d2d2d';
     }
 })
 
 grid.addEventListener('mouseout', (e) => {
     if(e.target.className != "grid"){
-        e.target.style.backgroundColor = 'blue';
+        e.target.style.backgroundColor = '#f3f3f3';
     }
 }) 
 
@@ -41,7 +41,7 @@ function removeSquares (nodeList) {
 }
 
 function setProperties(nodeList, dimension){
-    let percentage = 100/dimension;
+    let percentage = (100/dimension);
     nodeList.forEach((item) => {
         item.style.flexBasis = `${percentage}%`;
         item.style.height = `${percentage}%`;

@@ -1,7 +1,6 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-evenly; */
     height: 960px;
     width: 960px;
 }
@@ -9,7 +8,7 @@
 .grid-item {
   flex: 0 0 25%;
   height: 25%;
-  background-color: blue;
+  background-color: #f3f3f3;
 }
 
 button {

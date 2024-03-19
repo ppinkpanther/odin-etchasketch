@@ -20,7 +20,8 @@ button.addEventListener('click', () => {
     if(dimension <= 100){
         removeSquares(gridItems);
         makeSquares(dimension);
-    }
+        setProperties(gridItems, dimension);
+    }   
 })
 
 function makeSquares (dimenson) {
@@ -30,6 +31,7 @@ function makeSquares (dimenson) {
         grid.appendChild(newItem);
     }
     gridItems = document.querySelectorAll('.grid-item');
+    setProperties(gridItems, dimenson);
 }
 
 function removeSquares (nodeList) {
@@ -38,3 +40,10 @@ function removeSquares (nodeList) {
     })
 }
 
+function setProperties(nodeList, dimension){
+    let percentage = 100/dimension;
+    nodeList.forEach((item) => {
+        item.style.flexBasis = `${percentage}%`;
+        item.style.height = `${percentage}%`;
+    })
+}

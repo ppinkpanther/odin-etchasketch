@@ -6,6 +6,7 @@ grid.addEventListener('mouseover', (e) => {
     console.log(e.target);
     if(e.target.className != "grid"){
         e.target.style.backgroundColor = '#2d2d2d';
+
     }
 })
 
@@ -46,4 +47,42 @@ function setProperties(nodeList, dimension){
         item.style.flexBasis = `${percentage}%`;
         item.style.height = `${percentage}%`;
     })
+}
+
+
+function getRandomColor() {
+    let newColor = '#';
+    for(i = 0; i < 6; i++) {
+        newColor += getHexNumber();
+    }
+    return newColor;
+}
+
+function getHexNumber () {
+    if(Math.random() <= 0.375) {
+        switch (Math.floor(Math.random()*6)){
+            case 0:
+                return 'a';
+                break;
+            case 1: 
+                return 'b';
+                break;
+            case 2: 
+                return 'c';
+                break;
+            case 3: 
+                return 'd';
+                break;
+            case 4: 
+                return 'e';
+                break;
+            case 5: 
+                return 'f';
+                break;
+            default: 
+                return 'a';
+        }
+    } else {
+        return Math.floor(Math.random()*10);
+    }
 }

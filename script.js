@@ -7,8 +7,10 @@ grid.addEventListener('mouseover', (e) => {
     if(e.target.className != "grid" && !(e.target.classList.contains('touched'))){
         e.target.style.backgroundColor = getRandomColor();
         e.target.classList.toggle('touched');
+        e.target.style.opacity = 1;
     }else {
-        e.target.style.backgroundColor = 'red';
+
+        darkenSquare(e.target);
     }
 })
 
@@ -92,5 +94,6 @@ function getHexNumber () {
 
 function darkenSquare(target) {
     let currentOpacity = target.style.opacity;
-    target.style.opacity = (currentOpacity -= 0.1);
+    currentOpacity -= 0.1;
+    target.style.opacity = currentOpacity;
 }

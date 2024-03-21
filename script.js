@@ -9,7 +9,6 @@ grid.addEventListener('mouseover', (e) => {
         e.target.classList.toggle('touched');
         e.target.style.opacity = 1;
     }else {
-
         darkenSquare(e.target);
     }
 })

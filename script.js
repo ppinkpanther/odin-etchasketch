@@ -4,17 +4,19 @@ const button = document.querySelector('button');
 
 grid.addEventListener('mouseover', (e) => {
     console.log(e.target);
-    if(e.target.className != "grid"){
-        e.target.style.backgroundColor = '#2d2d2d';
-
+    if(e.target.className != "grid" && !(e.target.classList.contains('touched'))){
+        e.target.style.backgroundColor = getRandomColor();
+        e.target.classList.toggle('touched');
+    }else {
+        e.target.style.backgroundColor = 'red';
     }
 })
 
-grid.addEventListener('mouseout', (e) => {
-    if(e.target.className != "grid"){
-        e.target.style.backgroundColor = '#f3f3f3';
-    }
-}) 
+// grid.addEventListener('mouseout', (e) => {
+//     if(e.target.className != "grid"){
+//         e.target.style.backgroundColor = '#f3f3f3';
+//     }
+// }) 
 
 button.addEventListener('click', () => {
     let dimension = Number(prompt('Enter dimenson of grid: '));
@@ -55,6 +57,7 @@ function getRandomColor() {
     for(i = 0; i < 6; i++) {
         newColor += getHexNumber();
     }
+    console.log(newColor);
     return newColor;
 }
 

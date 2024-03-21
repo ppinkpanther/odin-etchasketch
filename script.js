@@ -89,3 +89,8 @@ function getHexNumber () {
         return Math.floor(Math.random()*10);
     }
 }
+
+function darkenSquare(target) {
+    let currentOpacity = target.style.opacity;
+    target.style.opacity = (currentOpacity -= 0.1);
+}
